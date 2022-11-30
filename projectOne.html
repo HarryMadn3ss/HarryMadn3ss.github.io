@@ -20,9 +20,9 @@
 				<!-- Header -->
 					<header id="header" class="alt">
 						<h1><a href="index.html">Project One</a></h1>
-						<!--<nav>
+						<nav>
 							<a href="#menu">Menu</a>
-						</nav> -->
+						</nav>
 					</header>
 
 				<!-- Menu -->
@@ -31,10 +31,10 @@
 							<h2>Menu</h2>
 							<ul class="links">
 								<li><a href="index.html">Home</a></li>
-								<li><a href="#"></a></li>
-								<li><a href="#"></a></li>
-								<li><a href="#"></a></li>
-								<li><a href="#"></a></li>
+								<li><a href="projectOne.html">Project One</a></li>
+								<li><a href="projectTwo.html">Project two</a></li>
+								<li><a href="projectThree.html">Project Three</a></li>
+								<li><a href="projectFour.html">Project Four</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -54,25 +54,22 @@
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/portrait.jpeg" alt="Portrait Image" /></a>
+									<a href="images/marbleMadnessLevelScreenshot.png" target="_blank" class="image"><img src="images/marbleMadnessLevelScreenshot.png" alt="Marble Madness Level Screenshot" /></a>
 									<div class="content">
-										<h2 class="major">About Me</h2>
-										<p>First Year Games Programming Undergrad studying at Staffordshire University. Currently working with the Unity engine and using C++ to create Games aswell as getting involved in Game Jams.</p>
-										
-										<p>Loves to get involved in different societies and events put on by the Uni such as the Games Development Society, Mario Kart Society and gets involved in Game Jams</p>
-										<!--<a href="#" class="special">Learn more</a>-->
+										<h2 class="major">Overveiw</h2>
+										<p>During my work at Staffordshire University, I was tasked with understanding the fundamentals of Rapid games prototyping and used these ideas to design create and implement several different features/ game mechanics and demonstrate them in a working prototype.</p>
+																			
 									</div>
 								</div>
 							</section>
-						<!--	
-						
+												
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+									<a href="images/marbleMadnessPegs.png" target="_blank" class="image"><img src="images/marbleMadnessPegs.png" alt="Marble Madness Pegs" /></a>
 									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">Pachinko Peg</h2>
+										<p>To Achieve this, I first created a list of mechanics I wanted to add to my game to enhance it as it was a framework based on a marble madness style game, I drew inspiration from other marble games. The first game mechanic was a pachinko peg that when hit by the user would bounce the user back, using lecture materials this was straight forward to implement, this led me to enhance the peg to not only bounce the player back but also be destroyed when this happened this allows the level to have breakable walls that feel substantial when the player collides with it.  </p>
+										
 									</div>
 								</div>
 							</section>
@@ -80,17 +77,27 @@
 						
 							<section id="three" class="wrapper spotlight style3">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+									<a href="images/marbleMadnessWipers.png" target="_blank" class="image"><img src="images/marbleMadnessWipers.png" alt="Marble Madness Wipers" /></a>
 									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">Wiper Blade</h2>
+										<p>The second feature I wanted to add was, what I dubbed, wiper blade. This wiper blade would be placed into the world space and move back and forth to ‘wipe’ the player off the map. This proved tricker to implement as I wanted to place it multiple times in various locations and currently, I was using public variables to achieve this, and it wasn’t the smooth movement I was looking for. This took me to the unity forums to research a potentially better way this led me to discover the Maths.PingPong function that is already bult into unity that would give me that steady and smooth back and forth that I wanted. I used this knowledge to create a second wiper that moved along the Z axis as well as the X allowing for greater customisability when it came to designing levels.</p>
+										
 									</div>
 								</div>
 							</section>
-						-->	
+							
+							<section id="four" class="wrapper spotlight style2">
+								<div class="inner">
+									<a href="images/marbleMadnessMagnet.png" target="_blank" class="image"><img src="images/marbleMadnessMagnet.png" alt="Marble Madness Magent" /></a>
+									<div class="content">
+										<h2 class="major">Magnet</h2>
+										<p>Finally, I Wanted to create a magnet feature that would pull the player towards itself if the player got too close. This magnet would prove to be the most complex feature I wanted to add to my prototype. My initial implementation took me down a method of reversing the bounce peg system, using a vector3 to find out the direction and the reverse peg bounce to pull the user. Again, this gave me a uneven junky pull towards the magnet that would only trigger the initial tigger enter. Not for the first time during this project I thought there must be a better way, this led me back to the unity forums where I discovered the vector3.movetowards command. This made the whole process simpler, by using this command unity would smoothly pull the player towards the magnet whenever the trigger was true.</p>
+										
+									</div>
+								</div>
+							</section>
 						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
+							<!--<section id="four" class="wrapper alt style1">
 								<div class="inner">
 									<h2 class="major">Projects</h2>
 									<p>Here are my featured projects, created during my time at Staffordshire University, Game Jams and Personal projects.</p>
@@ -119,7 +126,7 @@
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
 											<a href="projectFour.html" class="special">Learn more</a>
 										</article>
-									</section>
+									</section>-->
 									<!--<ul class="actions">
 										<li><a href="#" class="button">Browse All</a></li>
 									</ul>-->
