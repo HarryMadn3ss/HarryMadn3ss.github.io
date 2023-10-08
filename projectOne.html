@@ -44,7 +44,7 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">							
-							<h2>Marble Madness</h2>
+							<h2>OpenGL Graphics Project</h2>
 							<p></p>
 						</div>
 					</section>
@@ -55,10 +55,11 @@
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<a href="images/marbleMadnessLevelScreenshot.png" target="_blank" class="image"><img src="images/marbleMadnessLevelScreenshot.png" alt="Marble Madness Level Screenshot" /></a>
+									<a href="images/FOGGSSemTwo/FOGGSSemTwoGif.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/FOGGSSemTwoGif.gif" alt="Gif of Final Graphics Project" /></a>
 									<div class="content">
 										<h2 class="major">Overveiw</h2>
-										<p>During my work at Staffordshire University, I was tasked with understanding the fundamentals of Rapid games prototyping and used these ideas to design create and implement several different features/ game mechanics and demonstrate them in a working prototype.</p>
+										<p>During my work at Staffordshire University, I was tasked with understanding the fundamentals of the fixed graphical pipeline using OpenGL in order to prepare for the programmable pipeline in Year Two. 
+											<br><br>This Gif shows my final piece displaying lighting, materials, camera input, text, z buffer, .obj object loader, and texturing. </p>
 																			
 									</div>
 								</div>
@@ -66,10 +67,14 @@
 												
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a href="images/marbleMadnessPegs.png" target="_blank" class="image"><img src="images/marbleMadnessPegs.png" alt="Marble Madness Pegs" /></a>
+									<a href="images/FOGGSSemTwo/WhiteRect.png" target="_blank" class="image"><img src="images/FOGGSSemTwo/WhiteRect.png" alt="White REctangle in OpenGL" /></a>
 									<div class="content">
-										<h2 class="major">Pachinko Peg</h2>
-										<p>To Achieve this, I first created a list of mechanics I wanted to add to my game to enhance it as it was a framework based on a marble madness style game, I drew inspiration from other marble games. The first game mechanic was a pachinko peg that when hit by the user would bounce the user back, using lecture materials this was straight forward to implement, this led me to enhance the peg to not only bounce the player back but also be destroyed when this happened this allows the level to have breakable walls that feel substantial when the player collides with it.  </p>
+										<h2 class="major">Getting Started</h2>
+										<p>My experience in the OpenGL library was also my first implementation of a state machine, by defining a current state that is then kept until changed, 
+                                            this meant that if a colour was defined then everything would be that colour until redefined. These screenshots demonstrate the colour blending that happens when drawing a simple shape using the RGB colour model. 
+                                        <br><br>
+                                        My first step was to create a shape in 2D space to understand the coordinate system, OpenGL sets the origin of the world (0,0) in the centre of the screen, this was a crucial first step as previous frameworks use the origin 
+                                        at the top left-hand corner of the screen. </p>
 										
 									</div>
 								</div>
@@ -78,10 +83,12 @@
 						
 							<section id="three" class="wrapper spotlight style3">
 								<div class="inner">
-									<a href="images/marbleMadnessWipers.png" target="_blank" class="image"><img src="images/marbleMadnessWipers.png" alt="Marble Madness Wipers" /></a>
+									<a href="images/FOGGSSemTwo/firstRotation.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/firstRotation.gif" alt="First Rotation of Objects in OpenGL" /></a>
 									<div class="content">
-										<h2 class="major">Wiper Blade</h2>
-										<p>The second feature I wanted to add was, what I dubbed, wiper blade. This wiper blade would be placed into the world space and move back and forth to ‘wipe’ the player off the map. This proved tricker to implement as I wanted to place it multiple times in various locations and currently, I was using public variables to achieve this, and it wasn’t the smooth movement I was looking for. This took me to the unity forums to research a potentially better way this led me to discover the Maths.PingPong function that is already bult into unity that would give me that steady and smooth back and forth that I wanted. I used this knowledge to create a second wiper that moved along the Z axis as well as the X allowing for greater customisability when it came to designing levels.</p>
+										<h2 class="major">Moving Forward</h2>
+										<p>The next step used the skills learnt from the previous session to add new features to the program, this included creating an update and timer function that allows the program to loop through multiple times creating a game 
+                                            loop allowing animations to be played, simulations to be run and players to interact with the program moving away from a static image on the screen. <br><br> Once the game loop was established rotation was added to one of 
+                                            the shapes created previously this led to multiple shapes rotating at the same time as shown in the gif below.</p>
 										
 									</div>
 								</div>
@@ -89,15 +96,110 @@
 							
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a href="images/marbleMadnessMagnet.png" target="_blank" class="image"><img src="images/marbleMadnessMagnet.png" alt="Marble Madness Magent" /></a>
+									<a href="images/FOGGSSemTwo/wireframeCube.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/wireframeCube.gif" alt="Wireframe Cube" /></a>
 									<div class="content">
-										<h2 class="major">Magnet</h2>
-										<p>Finally, I Wanted to create a magnet feature that would pull the player towards itself if the player got too close. This magnet would prove to be the most complex feature I wanted to add to my prototype. My initial implementation took me down a method of reversing the bounce peg system, using a vector3 to find out the direction and the reverse peg bounce to pull the user. Again, this gave me a uneven junky pull towards the magnet that would only trigger the initial tigger enter. Not for the first time during this project I thought there must be a better way, this led me back to the unity forums where I discovered the vector3.movetowards command. This made the whole process simpler, by using this command unity would smoothly pull the player towards the magnet whenever the trigger was true.</p>
+										<h2 class="major">Adventures in 3D</h2>
+										<p>After creating my first animation I noticed that the object movement was jittery and lacked the smoothness expected, to fix this I created a double buffer, which was done by creating the next frame behind the current one and 
+                                            swapping the buffers when ready, this reduces the risk of screen tearing and choppiness in the program.<br>
+                                        
+                                        <br> When the rotation was added it was pointed out that if the update gets increasingly complex then the program may face FPS problems due to the time it takes to run the update loop and then fire the next frame. To fix this elapsed 
+                                        time was used to ensure that the frames, whether late or early, fired in the same 16ms that the others have smoothing them out to the expected 60fps and adding a dynamically altering frame rate to the program. This dynamic frame rate 
+                                        was crucial early on as later down the line the program became increasingly complex which could make the testing frustrating and challenging. <br> 
+
+                                        <br> I also explored multiple ways of creating a 3D cube, one very simple using a prebuilt wireframe version, shown in the GIF, then moving on to create my own using a few different methods starting with the basic plot of every vertex in 
+                                        3D space for each triangle. However, this meant that there was some overlap and the vertices were plotted on top of each other taking up memory and causing potential issues later. To fix this rather than replotting vertices I reused them 
+                                        along with the back face culling resulting in the Image below.
+									</p>
 										
 									</div>
 								</div>
 							</section>
-						
+
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="images/FOGGSSemTwo/colouredCube.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/colouredCube.gif" alt="Solid Rainbow Cube in OpenGL" /></a>
+									<div class="content">
+										<h2 class="major">Adventures in 3D Continued</h2>
+										<p>I also explored multiple ways of creating a 3D cube, one very simple using a prebuilt wireframe version, shown in the GIF, then moving on to create my own using a few different methods starting with the basic plot of every vertex in 
+                                            3D space for each triangle. However, this meant that there was some overlap and the vertices were plotted on top of each other taking up memory and causing potential issues later. To fix this rather than replotting vertices I reused them 
+                                            along with the back face culling resulting in the cube presented in the GIF.
+                                        <br><br>
+                                        To take this even further and more akin to the industry standard OOP practices using the file provided for us to practice with pulling the cube data in from a file and drawing the object that way.</p>
+										
+									</div>
+								</div>
+							</section>
+
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="images/FOGGSSemTwo/untexturedCubeField.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/untexturedCubeField.gif" alt="Cube Field" /></a>
+									<div class="content">
+										<h2 class="major">Travering the Cube Field</h2>
+										<p>Creating a single object that spins in space was a fun way to further my understanding of 3D Space but I wanted to take it further this led me to create an array of cubes that will be created in space using random positions, 
+                                            as seen in the gif. This was created to expand this to create multiple different objects in 3D space.
+									</p>
+										
+									</div>
+								</div>
+							</section>
+
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="images/FOGGSSemTwo/cubeField.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/cubeField.gif" alt="Textured Cube Field" /></a>
+									<div class="content">
+										<h2 class="major">Texturing</h2>
+										<p>After creating a cube field I wanted to add more more depth to my objects by adding textures. Up until this point I had just been using solid colours or interpolated colours to give life to my cubes, however, in games textures
+											are used to breathe life into boring objects. To add textures I created a class to read in values from a txt file to create a more modular program. Once the file was read in the values were assigned to the uv coordinates
+											 and imprinted on the cubes.  </p>
+										
+									</div>
+								</div>
+							</section>
+							
+
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="images/FOGGSSemTwo/shadowedCubeField.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/shadowedCubeField.gif" alt="Cube Field" /></a>
+									<div class="content">
+										<h2 class="major">Lighting and Materials</h2>
+										<p>Now that my objects had depth and textures I wanted to highlight both of these and make it easier for a user to see the different objects. Implementing lighting was one of the simpler features due to OpenGL having a function call for it, 
+											and by using this function call I did not have to reinvent the wheel and create a lighting system. However I did not stop there I wanted to give the user a way to turn the lights on or off, I did this using a simple method that checks if 
+											the light is on when the 'l' key is pushed and if so turns them off and vice versa. 
+											<br><br>
+											To keep with the OOP standards I created a material library in its class that would be called by the object, I also wanted to implement a call that would change the material when the user pressed a key. This is where a major problem arose, 
+											while creating materials I accidentally put the material new call in the cube update loop, this meant that I was creating a new material to assign to every one of the cubes every frame but also creating it on the heap so it never went out of
+											 scope creating a major memory leak. After a few days of searching for this memory leak I turned to Google for help, this led me to tools that could help me and found that VS has a built-in way of seeing how many new objects are created, so after
+											  finding out that I had created a ridiculous number of materials this narrowed down the search enough for me to find the problem and solve it.
+									</p>										
+									</div>									
+								</div>								
+							</section>
+							
+									
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">									
+									<div class="content">
+										<h2 class="major">Materials Library</h2>
+										<p><span class="image left"><img src="images/FOGGSSemTwo/blueCubeField.gif" alt="Blue Cube Field" /></span></p>
+										<p><span class="image right"><img src="images/FOGGSSemTwo/redCubeField.gif" alt="Red Cube Field" /></span></p>
+										
+									</div>
+								</div>
+							</section>
+
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="images/FOGGSSemTwo/FOGGSSemTwoGif.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/FOGGSSemTwoGif.gif" alt="Final Product" /></a>
+									<div class="content">
+										<h2 class="major">Final Product</h2>
+										<p>Finally, I created a scene graph to demonstrate an understanding of matrices I used this inherited relationship to rotate objects around another object. so rather than using a rotation and the object rotation around the object and then translating them into another area of space I translated the object first and then rotated around the object's origin point this allowed objects to orbit other objects. Once I was happy with this I downloaded some free-use textures and obj files to create an array of different objects to show my program is modular. 
+											<br><br>
+											I am very proud of how this project turned out, as I was very overwhelmed when beginning but kept working at it and very happily walked away with a first.
+									</p>										
+									</div>									
+								</div>								
+							</section>
+
 
 					</section>
 
