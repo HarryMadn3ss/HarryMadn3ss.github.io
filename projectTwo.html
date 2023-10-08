@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Mario</a></h1>
+						<h1><a href="index.html">S2D Graphics Project</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav> 
@@ -43,7 +43,7 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">							
-							<h2>Mario</h2>
+							<h2>S2D Graphics Project</h2>
 							<p></p>
 						</div>
 					</section>
@@ -52,55 +52,48 @@
 					<section id="wrapper">
 
 						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="index.html" class="image"><img src="images/portrait.jpeg" alt="Portrait Image" /></a>
-									<div class="content">
-										<h2 class="major">About Me</h2>
-										<p>First Year Games Programming Undergrad studying at Staffordshire University. Currently working with the Unity engine and using C++ to create Games aswell as getting involved in Game Jams.</p>
-										
-										<p>Loves to get involved in different societies and events put on by the Uni such as the Games Development Society, Mario Kart Society and gets involved in Game Jams</p>
-										<!--<a href="#" class="special">Learn more</a>-->
-									</div>
+						<section id="one" class="wrapper spotlight style1">
+							<div class="inner">
+								<a href="images/FOGGSSemOne/Gameplay.mp4" class="image"><video src="images/FOGGSSemOne/Gameplay.mp4" alt="Gameplay Video" controls width="100%" ></video></a>
+								<div class="content">
+									<h2 class="major">Overveiw</h2>
+									<p>During my Second semester at Staffordshire University I was tasked with creating a replica of the Mario Bros Arcade Game from scratch in C++ and SDL, 
+										this included creating a game loop, creating a control scheme to allow two players to play at the same time, animations, creating full collisions using both bounding box and
+										 bounding circle and also limit the players to the game screen, audio, and enemies that are effected by the POW block. 
+										<br><br>
+										Creating Mario from Scratch was a difficult and rewarding experience that improved my abilities and pushed me further such as learning and implementing singleton classes, 
+										creating a character class that is inherited from enemies and players using polymorphism to change them.
 								</div>
-							</section>						
-						<!-- grid layout -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Projects</h2>
-									<p>Here are my featured projects, created during my time at Staffordshire University, Game Jams and Personal projects.</p>
-									<section class="features">
-										<article>
-											<a href="projectOne.html" class="image"><img src="images/projectOne.png" alt="projectOne" /></a>
-											<h3 class="major">Project One</h3>
-											<p>Using a Framework to design an implement game mechanics in Unity.</p>
-											<a href="projectOne.html" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="projectTwo.html" class="image"><img src="images/pic05.jpg" alt="placeholder" /></a>
-											<h3 class="major">Project Two</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="projectTwo.html" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="projectThree.html" class="image"><img src="images/pic06.jpg" alt="placeholder" /></a>
-											<h3 class="major">Project Three</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="projectThree.html" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="projectFour.html" class="image"><img src="images/pic07.jpg" alt="placeholder" /></a>
-											<h3 class="major">Project Four</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="projectFour.html" class="special">Learn more</a>
-										</article>
-									</section>
-									<!--<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>-->
+							</div>
+						</section>
+						
+					
+						<section id="two" class="wrapper alt spotlight style2">
+							<div class="inner">
+								<a href="images/mario/marioLuigiJump.PNG" class="image"><img src="images/mario/marioLuigiJump.PNG" alt="Luigi Jumping" /></a>
+								<div class="content">
+									<h2 class="major">Getting Started</h2>
+									<p>Once SDL was integrated and a window was created The first this I did was create objects for Mario and Luigi and render them to the window, I learnt how to take a sprite and render
+										 that to the screen using a texture class that can be called for any object that will have a texture in the game. Once the Mario bros were added gravity and movement came next, implementing 
+										 my gravity opened the consideration of how fast Mario expected to fall and after some testing, I found a speed I felt happy with.</p>
+									
 								</div>
-							</section>
+							</div>
+						</section>
 
+					
+						<section id="three" class="wrapper spotlight style3">
+							<div class="inner">
+								<a href="images/mario/marioPOWBlock.PNG" class="image"><img src="images/mario/marioPOWBlock.PNG" alt="Mario Pow Block" /></a>
+								<div class="content">
+									<h2 class="major">POW</h2>
+									<p>Creating the POW block added an interesting challenge, when Either of the Mario Bros collided with the bottom of the block how to get all enemies on the screen to flip over? To accomplish this I 
+										added a variable that only members or children of the enemies class had access to called m_injured, once the pow block was hit all enemies in the enemy array became injured and flipped over, 
+										after a set amount of time elapsed then they would flip back over. </p>
+									
+								</div>
+							</div>
+						</section>
 					</section>
 
 				<!-- Footer -->
