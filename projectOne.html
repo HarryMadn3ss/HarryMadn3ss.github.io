@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Project One</title>
+		<title>OpenGL Graphics Project</title>
 		<link rel="icon" type="image/x-icon" href="images/logo.png">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -20,7 +20,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Marble Madness</a></h1>
+						<h1><a href="index.html">OpenGL Graphics Project</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -33,9 +33,9 @@
 							<ul class="links">
 								<li><a href="index.html">Home</a></li>
 								<li><a href="projectOne.html">OpenGL Graphics Project</a></li>
-								<li><a href="projectTwo.html">Mario</a></li>
+								<li><a href="projectTwo.html">S2D Graphics Project</a></li>
 								<li><a href="projectThree.html">2D Platformer in Unity</a></li>
-								<li><a href="projectFour.html">S2D Graphics Project</a></li>
+								<li><a href="projectFour.html">Mario</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -58,8 +58,13 @@
 									<a href="images/FOGGSSemTwo/FOGGSSemTwoGif.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/FOGGSSemTwoGif.gif" alt="Gif of Final Graphics Project" /></a>
 									<div class="content">
 										<h2 class="major">Overveiw</h2>
-										<p>During my work at Staffordshire University, I was tasked with understanding the fundamentals of the fixed graphical pipeline using OpenGL in order to prepare for the programmable pipeline in Year Two. 
-											<br><br>This Gif shows my final piece displaying lighting, materials, camera input, text, z buffer, .obj object loader, and texturing. </p>
+										<p>During my work at Staffordshire University, I was tasked with understanding the fundamentals of the fixed graphical pipeline using OpenGL to prepare for the programmable 
+                                            pipeline in Year Two. Throughout this project I learnt many techniques and expanded on some I had learnt, Object Orinted Programming was an important concept to understand for this 
+                                            project to keep code manageable and readable, researching skills and problem-solving also helped when an issue was encountered, and good coding practice such as comments and naming standards 
+                                            allowed me to navigate and understand my code base quickly and efficiently.  
+                                            <br><br>This GIF shows the final piece I produced which is a complex 3D scene that can load .obj files and render them using lighting, materials, and textures, in the scene that they are rendered 
+                                            Text is also displayed and a depth buffer is used, and to ensure smooth animations double buffering has been implemented. The player can move around the scene using their keyboard to control the camera or turn the lighting off and on.</p>
+
 																			
 									</div>
 								</div>
@@ -70,11 +75,8 @@
 									<a href="images/FOGGSSemTwo/WhiteRect.png" target="_blank" class="image"><img src="images/FOGGSSemTwo/WhiteRect.png" alt="White REctangle in OpenGL" /></a>
 									<div class="content">
 										<h2 class="major">Getting Started</h2>
-										<p>My experience in the OpenGL library was also my first implementation of a state machine, by defining a current state that is then kept until changed, 
-                                            this meant that if a colour was defined then everything would be that colour until redefined. These screenshots demonstrate the colour blending that happens when drawing a simple shape using the RGB colour model. 
-                                        <br><br>
-                                        My first step was to create a shape in 2D space to understand the coordinate system, OpenGL sets the origin of the world (0,0) in the centre of the screen, this was a crucial first step as previous frameworks use the origin 
-                                        at the top left-hand corner of the screen. </p>
+										<p>When starting Mario I was given a program that had the main function and nothing else, to be able to utilise SDL I had to manually set them up, this pushed me to research SDL and how to integrate external 
+											libraries into Visual Studio to get them to run correctly. </p>
 										
 									</div>
 								</div>
@@ -86,8 +88,7 @@
 									<a href="images/FOGGSSemTwo/firstRotation.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/firstRotation.gif" alt="First Rotation of Objects in OpenGL" /></a>
 									<div class="content">
 										<h2 class="major">Moving Forward</h2>
-										<p>The next step used the skills learnt from the previous session to add new features to the program, this included creating an update and timer function that allows the program to loop through multiple times creating a game 
-                                            loop allowing animations to be played, simulations to be run and players to interact with the program moving away from a static image on the screen. <br><br> Once the game loop was established rotation was added to one of 
+										<p>The next step used the skills learnt from the previous session to add new features to the program, this included creating a game loop allowing animations to be played, simulations to be run and players to interact with the program moving away from a static image on the screen. <br><br> Once the game loop was established rotation was added to one of 
                                             the shapes created previously this led to multiple shapes rotating at the same time as shown in the gif below.</p>
 										
 									</div>
@@ -99,16 +100,10 @@
 									<a href="images/FOGGSSemTwo/wireframeCube.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/wireframeCube.gif" alt="Wireframe Cube" /></a>
 									<div class="content">
 										<h2 class="major">Adventures in 3D</h2>
-										<p>After creating my first animation I noticed that the object movement was jittery and lacked the smoothness expected, to fix this I created a double buffer, which was done by creating the next frame behind the current one and 
-                                            swapping the buffers when ready, this reduces the risk of screen tearing and choppiness in the program.<br>
+										<p>After creating my first animation I noticed that the object movement was jittery and lacked the smoothness expected, to fix this I created a double buffer smoothing the frames.<br>
                                         
                                         <br> When the rotation was added it was pointed out that if the update gets increasingly complex then the program may face FPS problems due to the time it takes to run the update loop and then fire the next frame. To fix this elapsed 
-                                        time was used to ensure that the frames, whether late or early, fired in the same 16ms that the others have smoothing them out to the expected 60fps and adding a dynamically altering frame rate to the program. This dynamic frame rate 
-                                        was crucial early on as later down the line the program became increasingly complex which could make the testing frustrating and challenging. <br> 
-
-                                        <br> I also explored multiple ways of creating a 3D cube, one very simple using a prebuilt wireframe version, shown in the GIF, then moving on to create my own using a few different methods starting with the basic plot of every vertex in 
-                                        3D space for each triangle. However, this meant that there was some overlap and the vertices were plotted on top of each other taking up memory and causing potential issues later. To fix this rather than replotting vertices I reused them 
-                                        along with the back face culling resulting in the Image below.
+                                        time was used to ensure that the frames, whether late or early, fired in the same 16ms that the others have smoothing them out to the expected 60fps and adding a dynamically altering frame rate to the program. <br>                                         
 									</p>
 										
 									</div>
@@ -162,8 +157,7 @@
 									<a href="images/FOGGSSemTwo/shadowedCubeField.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/shadowedCubeField.gif" alt="Cube Field" /></a>
 									<div class="content">
 										<h2 class="major">Lighting and Materials</h2>
-										<p>Now that my objects had depth and textures I wanted to highlight both of these and make it easier for a user to see the different objects. Implementing lighting was one of the simpler features due to OpenGL having a function call for it, 
-											and by using this function call I did not have to reinvent the wheel and create a lighting system. However I did not stop there I wanted to give the user a way to turn the lights on or off, I did this using a simple method that checks if 
+										<p>Now that my objects had depth and textures I wanted to highlight both of these and make it easier for a user to see the different objects using lighting. However I did not stop there I wanted to give the user a way to turn the lights on or off, I did this using a simple method that checks if 
 											the light is on when the 'l' key is pushed and if so turns them off and vice versa. 
 											<br><br>
 											To keep with the OOP standards I created a material library in its class that would be called by the object, I also wanted to implement a call that would change the material when the user pressed a key. This is where a major problem arose, 
@@ -180,8 +174,8 @@
 								<div class="inner">									
 									<div class="content">
 										<h2 class="major">Materials Library</h2>
-										<p><span class="image left"><img src="images/FOGGSSemTwo/blueCubeField.gif" alt="Blue Cube Field" /></span></p>
-										<p><span class="image right"><img src="images/FOGGSSemTwo/redCubeField.gif" alt="Red Cube Field" /></span></p>
+										<a href="images/FOGGSSemTwo/blueCubeField.gif" target="_blank"><p><span class="image left"><img src="images/FOGGSSemTwo/blueCubeField.gif" alt="Blue Cube Field" /></span></p></a>
+										<a href="images/FOGGSSemTwo/redCubeField.gif" target="_blank"><p><span class="image right"><img src="images/FOGGSSemTwo/redCubeField.gif" alt="Red Cube Field" /></span></p></a>
 										
 									</div>
 								</div>
