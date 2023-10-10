@@ -57,9 +57,9 @@
 								<div class="inner">
 									<a href="images/FOGGSSemTwo/FOGGSSemTwoGif.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/FOGGSSemTwoGif.gif" alt="Gif of Final Graphics Project" /></a>
 									<div class="content">
-										<h2 class="major">Overveiw</h2>
+										<h2 class="major">Overview</h2>
 										<p>During my work at Staffordshire University, I was tasked with understanding the fundamentals of the fixed graphical pipeline using OpenGL to prepare for the programmable 
-                                            pipeline in Year Two. Throughout this project I learnt many techniques and expanded on some I had learnt, Object Orinted Programming was an important concept to understand for this 
+                                            pipeline in Year Two. Throughout this project I learnt many techniques, Object Oriented Programming is an important concept to understand for this 
                                             project to keep code manageable and readable, researching skills and problem-solving also helped when an issue was encountered, and good coding practice such as comments and naming standards 
                                             allowed me to navigate and understand my code base quickly and efficiently.  
                                             <br><br>This GIF shows the final piece I produced which is a complex 3D scene that can load .obj files and render them using lighting, materials, and textures, in the scene that they are rendered 
@@ -75,8 +75,11 @@
 									<a href="images/FOGGSSemTwo/WhiteRect.png" target="_blank" class="image"><img src="images/FOGGSSemTwo/WhiteRect.png" alt="White REctangle in OpenGL" /></a>
 									<div class="content">
 										<h2 class="major">Getting Started</h2>
-										<p>When starting Mario I was given a program that had the main function and nothing else, to be able to utilise SDL I had to manually set them up, this pushed me to research SDL and how to integrate external 
-											libraries into Visual Studio to get them to run correctly. </p>
+										<p>My experience in the OpenGL library was also my first implementation of a state machine, by defining a current state that is then kept until changed, 
+                                            this meant that if a colour was defined then everything would be that colour until redefined. These screenshots demonstrate the colour blending that happens when drawing a simple shape using the RGB colour model. 
+                                        <br><br>
+                                        My first step was to create a shape in 2D space to understand the coordinate system, OpenGL sets the origin of the world (0,0) in the centre of the screen, this was a crucial first step as previous frameworks use the origin 
+                                        at the top left-hand corner of the screen.</p>
 										
 									</div>
 								</div>
@@ -88,8 +91,8 @@
 									<a href="images/FOGGSSemTwo/firstRotation.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/firstRotation.gif" alt="First Rotation of Objects in OpenGL" /></a>
 									<div class="content">
 										<h2 class="major">Moving Forward</h2>
-										<p>The next step used the skills learnt from the previous session to add new features to the program, this included creating a game loop allowing animations to be played, simulations to be run and players to interact with the program moving away from a static image on the screen. <br><br> Once the game loop was established rotation was added to one of 
-                                            the shapes created previously this led to multiple shapes rotating at the same time as shown in the gif below.</p>
+										<p>Using the skills learnt from the previous session to add new features to the program, this included creating a game loop allowing animations to be played, simulations to be run and players to interact with the program moving away from a static image on the screen. <br><br> Once the game loop was established rotation was added to one of 
+                                            the shapes created previously this led to multiple shapes rotating at the same time as shown in the gif.</p>
 										
 									</div>
 								</div>
@@ -102,7 +105,7 @@
 										<h2 class="major">Adventures in 3D</h2>
 										<p>After creating my first animation I noticed that the object movement was jittery and lacked the smoothness expected, to fix this I created a double buffer smoothing the frames.<br>
                                         
-                                        <br> When the rotation was added it was pointed out that if the update gets increasingly complex then the program may face FPS problems due to the time it takes to run the update loop and then fire the next frame. To fix this elapsed 
+                                        <br> However if the update gets increasingly complex then the program may face FPS problems due to the time it takes to run the update loop and then fire the next frame. To fix this elapsed 
                                         time was used to ensure that the frames, whether late or early, fired in the same 16ms that the others have smoothing them out to the expected 60fps and adding a dynamically altering frame rate to the program. <br>                                         
 									</p>
 										
@@ -115,9 +118,9 @@
 									<a href="images/FOGGSSemTwo/colouredCube.gif" target="_blank" class="image"><img src="images/FOGGSSemTwo/colouredCube.gif" alt="Solid Rainbow Cube in OpenGL" /></a>
 									<div class="content">
 										<h2 class="major">Adventures in 3D Continued</h2>
-										<p>I also explored multiple ways of creating a 3D cube, one very simple using a prebuilt wireframe version, shown in the GIF, then moving on to create my own using a few different methods starting with the basic plot of every vertex in 
-                                            3D space for each triangle. However, this meant that there was some overlap and the vertices were plotted on top of each other taking up memory and causing potential issues later. To fix this rather than replotting vertices I reused them 
-                                            along with the back face culling resulting in the cube presented in the GIF.
+										<p>I also explored multiple ways of creating a 3D cube, initially using a prebuilt wireframe version, then moving on to create my own using a few different methods starting with the basic plot of every vertex in 
+                                            3D space for each triangle. However, this meant that there was some overlap and the vertices were plotted on top of each other taking up memory and causing potential issues later. To fix this rather than replotting vertices I reused them, 
+                                            along with the back face culling, resulting in the cube presented in the GIF.
                                         <br><br>
                                         To take this even further and more akin to the industry standard OOP practices using the file provided for us to practice with pulling the cube data in from a file and drawing the object that way.</p>
 										
