@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DirectX11 Graphics Project</title>
+		<link rel="icon" type="image/x-icon" href="images/logo.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">DirectX11 Graphics Project</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="MonogameNetworking.html">Monogame Networking Project</a></li>
+								<li><a href="DirectX11Graphics.html">DirectX 11 Graphics Project</a></li>
+								<li><a href="OpenGLGraphics.html">OpenGL Graphics Project</a></li>
+								<li><a href="Mario.html">Mario</a></li>
+								<li><a href="S2DGraphics.html">S2D Graphics Project</a></li>
+								<li><a href="UnityPlatformer.html">2D Platformer in Unity</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">							
+							<h2>DirectX11 Graphics Project</h2>
+							<p></p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="images/DirectX11Graphics/demoVideo.mp4" target="_blank" class="image"><video src="images/DirectX11Graphics/demoVideo.mp4" alt="Video of Final Graphics Project" controls width="100%"></video></a>
+									<div class="content">
+										<h2 class="major">Overview</h2>
+										<p>During my second year of University, I was tasked with further understanding of the graphical pipeline, building upon the knowledge of year one and OpenGL. For this project I created a basic seen in DirectX11 using C++ that showed of key skills and aspects of graphics I have learnt. 
+                                            <br><br>This GIF shows the final piece I produced which is a complex 3D scene that can load .obj files and render them using lighting, materials, and textures. A depth buffer is used, and to ensure smooth animations 
+											double buffering has been implemented. The player can move around the scene using their keyboard to control the camera or turn the lighting off and on.
+										<br><br>Grade: First<br><br>Features implemented:</p>																						
+												<br>Hard Coded Cubes (both Textured and Untextured)
+												<br>Transparent Pyramid
+												<br>Textured Model Loaded Objects
+												<br>Specular Mapped Crates
+												<br>Full Per Pixel Phong Lighting
+												<br>Additional Area Light
+												<br>Fully Controllable Debug Camera
+												<br>Three Different Static Cameras
+												<br>Static Camera That Looks at an Object
+												<br>Picking
+												<br>Terrain
+												<br>Alpha Clipped Texture
+												<br>Skybox (follows camera)
+												<br>Json Loading of Config Files (Lighting and Object Data)
+												<br>Heightmap				
+									</div>
+								</div>
+							</section>
+
+							<!--<section id="two" class="wrapper spotlight style2">
+								<div class="inner">
+									<a href="images/DirectX11Graphics/demoVideo.mp4" target="_blank" class="image fit"><video src="images/DirectX11Graphics/demoVideo.mp4" alt="Video of Final Graphics Project" controls width="100%"></video></a>									
+							</section>-->
+												
+							<section id="three" class="wrapper alt spotlight style3">
+								<div class="inner">
+									<a href="images/DirectX11Graphics/FollowObject.gif" target="_blank" class="image"><img src="images/DirectX11Graphics/FollowObject.gif" alt="camera follows object in scene" /></a>
+									<div class="content">
+										<h2 class="major">Starting To Believe</h2>
+										<p>This project was the first step in moving away from taking an objects position and adding a number in a direction, it introduced the uses of Matrices to translate, rotate and scale an object in accordance with the other 
+											objects in the world. As can be seen in the gif all objects orbit the object in the centre, this I don’t by giving any new object the world matrix of its parent, thus if the parent rotates then the child will.
+                                        <br><br>
+                                        The camera also uses a method of matrix manipulation, if the position of the camera is moved manually using a scalar value to move it along an axis the camera become jumpy and frustrating to use, instead the cameras world 
+										matrix is inversed into the view matrix the position is then moved and fed back into the world matrix, this method produces a camera that is smooth but can also rotate around its axes giving it pitch, yaw and roll movements. 
+										It’s interesting to note that by using this method the camera never leaves the origin, by taking it back to the view matrix to manipulate all other objects move in accordance with what the camera is doing.</p>
+										
+									</div>
+								</div>
+							</section>
+
+						
+							<section id="four" class="wrapper spotlight style4">
+								<div class="inner">
+									<a href="images/DirectX11Graphics/overview.gif" target="_blank" class="image"><img src="images/DirectX11Graphics/overview.gif" alt="Overview of final Project" /></a>
+									<div class="content">
+										<h2 class="major">Earth and Sky</h2>
+										<p>Terrain and skybox are almost expected in games, giving the world a sense of realism or believability the player would expect. with this in mind I implemented a skybox by rendering a cube around the camera and using the matrix maths
+											 to lock the position of the cube to the camera so the ‘player’ cannot clip the bounds of the sky. However its more complex then just rendering a cube, as I have created a z buffer and back face culling the texture on the cube is 
+											 rendered on the outside and the cube is not seen by the camera, to fix this I opted to turn off the back face culling for the skybox only, another way would have drawn the cube inversely making the vertices opposite and draw the 
+											 texture on the inside. The second problem was to ensure the skybox was drawn after the solid objects, this meant that the skybox wouldn’t block view of the objects but also cut down on the memory used as the parts of the skybox that 
+											 were blocked by objects is not drawn. This did not include all objects as the transparent objects need to ‘reflect’ what is behind them for that transparent effect.</p>
+										<br><br>
+											<p>
+												Terrain was generated using a height map, first a plane was created by implementing a function to generate a series of vertices using the dimensions of the height map. the planes vertices were then looped through and applied the y 
+												value of the vertices only, these values could be scaled using a scalar to change the result, once drawn the texture shows dips and peaks according to the height map. this method of generating a plane first means that the program 
+												can use any height map with minimal changes to the code.
+											</p>
+									</div>
+								</div>
+							</section>
+							
+							<section id="five" class="wrapper alt spotlight style5">
+								<div class="inner">
+									<a href="images/DirectX11Graphics/pixelShading.gif" target="_blank" class="image"><img src="images/DirectX11Graphics/pixelShading.gif" alt="Close up of cube with phong shading" /></a>
+									<div class="content">
+										<h2 class="major">Pixel Shader</h2>
+										<p>This project was my first introduction into shader languages, taking the next step in lighting rather than applying lighting across a face of the object using the normal the lighting is calculated per pixel of that face providing more realistic
+											 reflections and light behaviour. The gif shows the 3 light systems ambient, diffuse, and specular on the objects and using HLSL to calculate the effects of light on the pixel shader by utilising the constant buffer to pass the information to the
+											  GPU, such as the light info, the camera position and object normals.<br>                                         
+									</p>
+										
+									</div>
+								</div>
+							</section>			
+
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>							
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/harryawatts/" target="_blank"><img src="images/linkedinIcon.png" alt="Linkedin Logo" width="200"></a></li>								
+								<li><a href="https://github.com/HarryMadn3ss" target="_blank"><img src="images/githubIcon.png" alt="Github Logo" width="200"></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Harry Watts. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

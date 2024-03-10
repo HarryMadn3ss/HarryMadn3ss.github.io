@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>S2D Graphics Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">S2D Graphics Project</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav> 
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="MonogameNetworking.html">Monogame Networking Project</a></li>
+								<li><a href="DirectX11Graphics.html">DirectX 11 Graphics Project</a></li>
+								<li><a href="OpenGLGraphics.html">OpenGL Graphics Project</a></li>
+								<li><a href="Mario.html">Mario</a></li>
+								<li><a href="S2DGraphics.html">S2D Graphics Project</a></li>
+								<li><a href="UnityPlatformer.html">2D Platformer in Unity</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">							
+							<h2>S2D Graphics Project</h2>
+							<p></p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+						<section id="one" class="wrapper spotlight style1">
+							<div class="inner">
+								<a href="images/FOGGSSemOne/Gameplay.mp4" class="image" target="_blank"><video src="images/FOGGSSemOne/Gameplay.mp4" alt="Gameplay Video" controls width="100%" ></video></a>
+								<div class="content">
+									<h2 class="major">Overview</h2>
+									<p>This project in C++ using the S2D libraries was my first experience creating a game in C++ in a unique and custom engine, creating whatever idea I could think of. 
+										This project allowed me to learn the fundamentals of C++, OOP, good coding standards, and problem-solving to create a working game from a very barebones framework.  
+										<br><br>
+										The video shows my final product, dubbed, Cold Circle London, which is a 2D top-down horde shooter, incorporating a similar movement style to the Binding of Issac. 
+										This game includes custom animated sprites, object pooling to easily add enemies and bullets to the screen, a score and health system, audio to give the user a secondary output when damage is 
+										taken or an enemy is spawned, creating different states to allow the program to have a main menu, pause screen and end screen. 
+								</div>
+							</div>
+						</section>
+						
+					
+						<section id="two" class="wrapper alt spotlight style2">
+							<div class="inner">
+								<a href="images/FOGGSSemOne/spriteSheet.png" class="image" target="_blank"><img src="images/FOGGSSemOne/spriteSheet.png" alt="Custom Character Spritesheet" /></a>
+								<div class="content">
+									<h2 class="major">Getting Started</h2>
+									<p>After Receiving the framework I began to add movement and create my sprites. This was my first time creating a custom sprite sheet, planning out all the animations that I wanted 
+										to have and how those animations would play out, this includes how to make the player look like they are walking, injured, firing, or dead. the image shows my Spritesheet created in Piskel.
+								</div>
+							</div>
+						</section>
+
+					
+						<section id="three" class="wrapper spotlight style3">
+							<div class="inner">
+								<a href="images/FOGGSSemOne/spriteAdded.png" class="image" target="_blank"><img src="images/FOGGSSemOne/spriteAdded.png" alt="Sprite added to game screen" /></a>
+								<div class="content">
+									<h2 class="major">Cherry Picking</h2>
+									<p>When adding my first collectable to my game I ended up with a situation where rather than just flicking the cherries between red and blue, they would also bounce across the screen. To fix this I 
+										consulted my previous code for the player object and noticed that the player had an additional variable of position. adding this to the collectable and changing the locational data in the collectable 
+										rect the animation started to function as expected. </p>
+									
+								</div>
+							</div>
+						</section>
+					</section>
+
+					<section id="two" class="wrapper alt spotlight style2">
+						<div class="inner">
+							<a href="images/FOGGSSemOne/cclGameScreen.png" class="image" target="_blank"><img src="images/FOGGSSemOne/cclGameScreen.png" alt="Game Screenshot" /></a>
+							<div class="content">
+								<h2 class="major">Hunting the PLayer</h2>
+								<p>After getting the player animated and some collectables for the player to chase I wanted to add enemies with some basic AI functionality. To create the enemies I found some sprites and decided I wanted them to follow 
+									the player around the screen, to achieve this I incorporated the Dot product to get the angle between the player and the enemy and make them walk in that direction, and turn the sprite to match the direction of travel
+									 rather than create a sprite for every direction they could face.
+							</div>
+						</div>
+					</section>
+
+				
+					<section id="three" class="wrapper spotlight style3">
+						<div class="inner">
+							<a href="images/FOGGSSemOne/cclPausedScreen.png" class="image" target="_blank"><img src="images/FOGGSSemOne/cclPausedScreen.png" alt="Sprite added to game screen" /></a>
+							<div class="content">
+								<h2 class="major">Looking Good</h2>
+								<p>Finally, to round off my project I wanted to make it look nicer than a character running around a black screen, this involved getting a background image that suited the vibe of the game I was creating, which was added 
+									before the drawing of the rest of the sprites, using the painter's algorithm to ensure nothing was hidden from the player. However, I didn't want to stop there as the player jumped straight into the game without warning 
+									to prevent this I added a main menu screen and an end screen to allow the player to get ready before being jumped into it. The next logical step from a main menu was a pause screen this was added to give the player a break 
+									and also a list of controls. </p>
+								
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>							
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/harryawatts/" target="_blank"><img src="images/linkedinIcon.png" alt="Linkedin Logo" width="200"></a></li>								
+								<li><a href="https://github.com/HarryMadn3ss" target="_blank"><img src="images/githubIcon.png" alt="Github Logo" width="200"></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Harry Watts. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
