@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Low Level Platform Optimisation</title>
+		<link rel="icon" type="image/x-icon" href="images/logo.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Low Level Platform Optimisation</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				 <!--Menu -->
+				 <nav id="menu">
+					<div class="inner">
+						<h2>Menu</h2>
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="LowLevel.html">Low Level Platform Optimisation</a></li>
+							<li><a href="MechHead.html">MechHead</a></li>
+							<li><a href="Tools.html">Tools Development</a></li>
+							<li><a href="GameAI.html">Game AI</a></li>
+							<!--<li><a href="Physics.html">Physics Programming</a></li>-->
+							<li><a href="MonogameNetworking.html">Monogame Networking Project</a></li>
+							<li><a href="DirectX11Graphics.html">DirectX 11 Graphics Project</a></li>
+							<li><a href="OpenGLGraphics.html">OpenGL Graphics Project</a></li>
+							<li><a href="Mario.html">Mario</a></li>
+							<li><a href="S2DGraphics.html">S2D Graphics Project</a></li>
+							<li><a href="UnityPlatformer.html">2D Platformer in Unity</a></li>
+						</ul>
+						<a href="#" class="close">Close</a>
+					</div>
+				</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">							
+							<h2>Low Level Platform Optimisation</h2>
+							<p></p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="images/LowLevel/2024-11-23 10-50-29.mp4" target="_blank" class="image"><video src="images/LowLevel/2024-11-23 10-50-29.mp4" controls width="100%" alt="Video of project" ></video></a>
+									<div class="content">
+										<h2 class="major">Overview</h2>
+										<p>Durning my final year the modules shifted from teaching concepts and implementation to purely theory taking what I had learnt over the past two years and adapting them to make practical solutions to hypothetical problems. This project demonstrates this perfectly, Low Level involved taking a program that would instantiate a number of objects with simple collisions and using low level techniques to not only improve the speed of the program but understanding how the keywords like new and delete work bypassing them and creating a way for memory to be human readable. 
+                                            <br><br>This project shows Memory Trackers, overriding of global and class new and delete, Custom memory pool with three different sizes of slots starting at 50 bytes up to 300 bytes, octree partitioning, thread pool to handle the octree collisions. 
+										<br><br>
+									
+										</p>
+
+																			
+									</div>
+								</div>
+							</section>
+												
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="images/LowLevel/MemoryTracker.png" target="_blank" class="image"><img src="images/LowLevel/MemoryTracker.png" alt="Image of Memory tracker printing the total memory used to the console" /></a>
+									<div class="content">
+										<h2 class="major">Memory Tracking</h2>
+										<p>Before creating complicated memory, storage or attempting to speed up the program it was important to understand how the memory was currently allocated, if the program developed a memory leak, they can be difficult to pinpoint without the use of memory tools. This led to the creation of a memory tracker for the objects in the scene, as this scene was simple three trackers were created one each for spheres and cubes and a third for everything not filtered into the object trackers. The image shows the very simple output whenever the ‘m’ key was pressed, simply by taking the byte size of the object created and increasing the value held in the tracker. </p>										
+									</div>
+								</div>
+							</section>
+
+						
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="images/LowLevel/WalkTheHeap.png" target="_blank" class="image"><img src="images/LowLevel/WalkTheHeap.png" alt="Image of Walking the Heap output to the console" /></a>
+									<div class="content">
+										<h2 class="major">Walking the Heap</h2>
+											<p>Understanding where the memory is being used is all well and good but sometimes its important for the entire memory to be looked at to check its integrity, to do this the heap has to be walked. To do this a header and footer were created whenever a new object was created and added onto the memory request, for instance is a cube was 50 bytes, and the header and footer totalled 50 bytes then 100 bytes were requested and the data stored in the header. 
+											<br>
+											The data included the start of the entire memory block where the cube started and where the footer started as the draw function still needed to know where the cube started but when the data was freed it need the start of the header not the cube or the program would crash, this calculated used pointer maths to move the pointer forward or backwards depending on the location required. This also meant that during a walking of the heap the footer could be jumped to and checked against the value it should be stored in the header and confirmed correct or not. Then using a linked list the next node is checked and so on until there is no longer a next pointer.
+											</p>
+										
+									</div>
+								</div>
+							</section>
+							
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="images/LowLevel/MemoryPool.png" target="_blank" class="image"><img src="images/LowLevel/MemoryPool.png" alt="Console showing what memory pool slot ther object is assigned to" /></a>
+									<div class="content">
+										<h2 class="major">Memory pool</h2>
+										<p>Games, and many software packages, don’t request memory during the life of the program, one because its slow but also because there is no safeguard against over allocating memory, memory leaks are undetected can wreak havoc upon a user’s computer if the new key word is used as the computer will keep giving up memory slots until the program, or worse computer, crashes. To combat this I created a memory pool that requests all the memory I need at the start of the program and using pointer maths I split the block into different slots ‘parking spaces’  of varying sizes, this changed the request of memory to not just calling malloc but asking the memory pool if a slot is available, is one is available of the correct size then the object is placed inside, if there is no slot the object is not created. <br>                                         
+									</p>
+										
+									</div>
+								</div>
+							</section>
+
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="images/LowLevel/TestingCollisionTimeDefault.png" target="_blank" class="image"><img src="images/LowLevel/TestingCollisionTimeDefault.png" alt="Image of testing base program collision time" /></a>
+									<div class="content">
+										<h2 class="major">Octree</h2>
+											<p>
+												To speed up the program it was important to know where the most change can be achieved, there is not much point sinking time into optimising something that won’t give the returns another area might have, to ensure I was optimising the correct area some testing was done and the image shows the massive slow down when more object are added to the collision space, it was clear to see that optimising the collisions were the place to start. This led to the researching of special portioning, splitting the game space into segments and only calculating the potential collisions in that space, this greatly reduced the amount of checks the program need to do on a given object, as there is no point checking an object against an object on the other side of the screen as there is no chance of collision. However, I didn’t want to stop there as during my research it was stated that an Octree is better at splitting a 3D space than a simple spatial partition, and if reducing the space by 4 then taking it further can only help, well during testing that wasn’t always the case.
+											</p>										
+									</div>
+								</div>
+							</section>
+
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="images/LowLevel/CPUTimeSpent.png" target="_blank" class="image"><img src="images/LowLevel/CPUTimeSpent.png" alt="CPU break down of time spent in diffent functions" /></a>
+									<div class="content">
+										<h2 class="major">Thread Pool</h2>
+										<p>
+											By creating an Octree, it was clear how multi-threading the program would be beneficial as the image shows the amount of time spent in the testing collisions is still significant and a change can improve this, and as each object would be assigned to a partition that could not interact with objects in other partitions would prevent race conditions in the collisions. However, its not as simple as taking a thread for each segment and firing it off as for an octree of depth 3 means 512 threads required to check all the collisions. After some research I came across the thread pool where rather than creating a thread and firing it off with a given task the threads are created at the start of the program and when a task is added to the queue the next available thread will take it while the others wait for the next task. 										</p>										
+									</div>
+								</div>
+							</section>
+							
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="images/LowLevel/FullTesting.png" target="_blank" class="image"><img src="images/LowLevel/FullTesting.png" alt="Graph of all final testing between partioning and threads" /></a>
+									<div class="content">
+										<h2 class="major">Testing</h2>
+											<p>
+												To ensure what I did made a difference in the performance of the program extensive testing was conducted, broken down into the graph shown it was interesting that the solution presented was not as cut and dry as originally thought. Take spatial partitioning with 10000 objects the time taken to compute the collisions drastically lowers with the depth of 5 vs 3 but with 100, and 1000 objects a depth of 5 was slower. A very similar thing happened with the introduction of the thread pool where a different number of threads might perform better than others with 10000 objects but by the same token slower with less objects. In my opinion there is two major conclusions to my testing the first that the types of optimisations taken will depend on the outcome desired, a simpler game might not need the speed of lots of objects the same way that an open world might do. And second despite the slow downs every single optimisation improves the speed of the program over the default case, so are worth it anyway.											</p>										
+									</div>
+								</div>
+							</section>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>							
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/harryawatts/" target="_blank"><img src="images/linkedinIcon.png" alt="Linkedin Logo" width="200"></a></li>								
+								<li><a href="https://github.com/HarryMadn3ss" target="_blank"><img src="images/githubIcon.png" alt="Github Logo" width="200"></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Harry Watts. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

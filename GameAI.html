@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Game AI</title>
+		<link rel="icon" type="image/x-icon" href="images/logo.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Game AI</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				 <!--Menu -->
+				 <nav id="menu">
+					<div class="inner">
+						<h2>Menu</h2>
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="LowLevel.html">Low Level Platform Optimisation</a></li>
+							<li><a href="MechHead.html">MechHead</a></li>
+							<li><a href="Tools.html">Tools Development</a></li>
+							<li><a href="GameAI.html">Game AI</a></li>
+							<!--<li><a href="Physics.html">Physics Programming</a></li>-->
+							<li><a href="MonogameNetworking.html">Monogame Networking Project</a></li>
+							<li><a href="DirectX11Graphics.html">DirectX 11 Graphics Project</a></li>
+							<li><a href="OpenGLGraphics.html">OpenGL Graphics Project</a></li>
+							<li><a href="Mario.html">Mario</a></li>
+							<li><a href="S2DGraphics.html">S2D Graphics Project</a></li>
+							<li><a href="UnityPlatformer.html">2D Platformer in Unity</a></li>
+						</ul>
+						<a href="#" class="close">Close</a>
+					</div>
+				</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">							
+							<h2>Game AI</h2>
+							<p></p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="images/AI/Dijkstra.mp4" target="_blank" class="image"><video src="images/AI/Dijkstra.mp4" controls width="100%" alt="video of Dijkstra algorithm" ></video></a>
+									<div class="content">
+										<h2 class="major">Overview</h2>
+										<p>Using Unity I was tasked with demonstrating a number of features that AI would uses in Games, this involved Steering behaviours, Pathfinding and Decision Making that combined to create an AI agent that would fight off in a horde shooter. 
+										<br><br>
+										Grade: First
+										</p>
+
+																			
+									</div>
+								</div>
+							</section>
+											
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="images/AI/Maths.mp4" target="_blank" class="image"><video src="images/AI/Maths.mp4" alt="Video of Maths Working" controls width="100%" ></video></a>
+									<div class="content">
+										<h2 class="major">Buliding the Foundations</h2>
+										<p>
+											First came the maths that would lay the foundation of the AI, this included basic vector maths such as Magnitude, Normalise, Dot product and Cross product. This was crucial to get right as it is the way the AI will perceive the world around it, how it knows where the enemies are or what direction it is facing.
+										</p>	
+									</div>
+								</div>
+							</section>							
+
+						
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="images/AI/AI.mp4" target="_blank" class="image"><video src="images/AI/AI.mp4" alt="Video of AI Steering Behaviours" controls width="100%"><video></a>
+									<div class="content">
+										<h2 class="major">First Steps</h2>
+										<p>Next came Steering Behaviours while considered basic steering behaviours are great at adding extra behaviours to a more advanced AI. For example, I used evade for my AI agent if an enemy is too close, I felt this looked more natural than pathfinding away from the enemy. The steering behaviours include seek, flee, pursuit, evade, arrive, wander, collision avoidance and group behaviours.
+
+										</p>
+										
+									</div>
+								</div>
+							</section>
+							
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="images/AI/AStar.mp4" target="_blank" class="image"><video src="images/AI/AStar.mp4" alt="A* Pathfinding" controls width="100%"></video></a>
+									<div class="content">
+										<h2 class="major">The Path Taken</h2>
+										<p>
+											Pathfinding upgraded how the agent will navigate the space, while seek could be use to take the agent from one space to another if there are obstacles in the way its unlikely the AI will make it to the destination let alone in an immersive way. The first Pathfinding Algorithm I implemented was Dijkstra’s algorithm being the first place to start for many pathfinding algorithms, although Dijkstra will always return the shortest path, should there be one available, it is an undirected search so will search all nodes without direction and fans out from the start location, this lead to A* a directed version of Dijkstra’s using heuristics to guide the search in the direction of the goal. <br>                                         
+											<br><br>
+											The Video shows off A* pathfinding with multiple different heuristics, the coloured squares highlighted shows the nodes searched by the algorithm.
+										</p>
+										
+									</div>
+								</div>
+							</section>
+
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="images/AI/JPS.mp4" target="_blank" class="image"><video src="images/AI/JPS.mp4" alt="Video of JPS pathfinding" controls width="100%"></video></a>
+									<div class="content">
+										<h2 class="major">Jump Point Search</h2>
+										<p>
+											The focusing of the search makes A* more efficient than Dijkstra’s algorithm and in this pursuit of efficiency Jump Point Search, JPS, pushes it further by only adding nodes to the path should they meat certain conditions mainly if another jump point has been found in the direction of the goals.
+										</p>	
+									</div>
+								</div>
+							</section>
+							
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="images/AI/Behaviour Tree Nodes.png" target="_blank" class="image"><img src="images/AI/Behaviour Tree Nodes.png" alt="Image of all behaviour tree nodes Used" /></a>
+									<div class="content">
+										<h2 class="major">Decision Making</h2>
+										<p>
+											To create my AI agent, I want it to feel as real as possible I decided to create and implement a behaviour tree, as it had more flexibility than the other methods and did not have the drawback of state thrashing that may occur with finite state machines. So, I started by creating all the potential nodes that could be used so when it can to following the logic it was a simple case of coding my designs.
+										</p>
+										
+									</div>
+								</div>
+							</section>						
+						
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<div class="content">									
+										<iframe width="1120" height="630" src="https://www.youtube.com/embed/L659JLJ0Rx8?si=eMHuKjIvJxoFIpJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>								
+									</div>
+								</div>
+							</section>
+
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<div class="content">		
+										<p>
+											First, I wanted to make my agent have a base state of wander make it look like they are exploring the map while not in danger. By utilising my previous wander implementation, and Jump Point Search (JPS) pathfinding the agent was able to wander without getting caught on walls.
+											<br><br>
+											After getting pathfinding working for my agent to wander around the map it made sense to create a new leaf node that would change the target position of the pathfinding to the pickup location, this was done using the actions inside of unity to listen for when a pickup is spawned and set the target locations in the dictionary and conversely if the pick up is collected then the locations are reset in the dictionary and the wandering begins again. Deciding on which pickup to go for comes down to the players health, while using different guns can be useful once bellow a certain health the agent is in danger of getting swamped by enemies before having time to react.
+											<br><br>
+											Shooting and evading were created with the other in mind while shooting at an enemy it is likely we want to be backing away from them to limit the danger from them. However, I wanted to keep each node as decoupled from the others as possible, this led to ordering them in the tree appropriately. As the agent won’t be firing at an enemy unless there is one close then it is safe to assume there is no enemy to flee from, so using a sequence for these two nodes specifically means that if the agent doesn’t find anyone to shoot, we don’t bother trying to find an enemy to flee from. After implementing both of these nodes I ran into an issue where the agent would try to flee from or shoot at an enemy behind a wall, this was a quick fix by firing a raycast at the enemy the agent is trying to shoot and if that ray had hit a wall before the enemy ignore it as it is not in line of sight, this can be seen in the video, especially towards the end, with the red lines locking onto the enemies and if they are behind a wall they break.
+											<br><br>
+											Finally, I wanted to switch weapons based on certain conditions, for this I wanted to try and recreate what weapon I would likely select, this meant that if the rifle has ammo, I want to be using it unless there are main enemies, or I am low on health. Putting this node into the tree took some consideration as the agent should select the gun before shooting the enemy but not get locked into choosing a weapon and not shoot, after some testing I put the node before the shooting node as it I felt it gave the more believable behaviour.
+										</p>							
+									</div>
+								</div>
+							</section>
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>							
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/harryawatts/" target="_blank"><img src="images/linkedinIcon.png" alt="Linkedin Logo" width="200"></a></li>								
+								<li><a href="https://github.com/HarryMadn3ss" target="_blank"><img src="images/githubIcon.png" alt="Github Logo" width="200"></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Harry Watts. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
