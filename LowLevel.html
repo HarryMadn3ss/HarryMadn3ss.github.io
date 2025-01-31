@@ -129,7 +129,10 @@
 									<div class="content">
 										<h2 class="major">Thread Pool</h2>
 										<p>
-											By creating an Octree, it was clear how multi-threading the program would be beneficial as the image shows the amount of time spent in the testing collisions is still significant and a change can improve this, and as each object would be assigned to a partition that could not interact with objects in other partitions would prevent race conditions in the collisions. However, its not as simple as taking a thread for each segment and firing it off as for an octree of depth 3 means 512 threads required to check all the collisions. After some research I came across the thread pool where rather than creating a thread and firing it off with a given task the threads are created at the start of the program and when a task is added to the queue the next available thread will take it while the others wait for the next task. 										</p>										
+											By creating an Octree, it was clear how multi-threading the program would be beneficial as the image shows the amount of time spent in the testing collisions is still significant and a change can improve this, and as each object would be assigned to a partition that could not interact with objects in other partitions would prevent race conditions in the collisions. However, its not as simple as taking a thread for each segment and firing it off as for an octree of depth 3 means 512 threads required to check all the collisions. After some research I came across the thread pool where rather than creating a thread and firing it off with a given task the threads are created at the start of the program and when a task is added to the queue the next available thread will take it while the others wait for the next task. 								
+											<br><br>
+											<a href="https://gist.github.com/HarryMadn3ss/18f9b04bd1ec3a5e17a37b726930471b" target="_blank">Click here to see code Gist</a>
+										</p>										
 									</div>
 								</div>
 							</section>
